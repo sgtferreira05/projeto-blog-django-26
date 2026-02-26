@@ -1,0 +1,6 @@
+from django.core.exceptions import ValidationError
+
+def validate_png(image):
+    if image:
+        if not image.name.lower().endswith('.png'):
+            raise ValidationError("Only PNG images are allowed.")
