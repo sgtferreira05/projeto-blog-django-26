@@ -9,3 +9,19 @@ def index(request):
             # 'name': 'Ailton',
         }
     )
+def page(request):
+    return render(
+        request,
+        'blog/pages/page.html',
+        {
+            # 'name': 'Ailton',
+        }
+    )
+def post(request):
+    return render(
+        request,
+        'blog/pages/post.html',
+        {
+            # 'name': 'Ailton',
+        }
+    )
