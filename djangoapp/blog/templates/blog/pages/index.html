@@ -4,13 +4,18 @@
   <main class="main-content section-wrapper">
     <div class="section-content-wide">
       <div class="section-gap">
-
-        <div class="card-grid">
-          {% for i in ""|ljust:"9" %}
-            {% include 'blog/partials/_post-card.html' with i=forloop.counter0 %}
-          {% endfor %}
-        </div>
-
+        {%if page_obj%}
+          <div class="card-grid">
+            {% for post in page_obj %}
+              {% include 'blog/partials/_post-card.html' with i=forloop.counter0 %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="not-found center">
+            <h2>No posts found</h2>
+            <p>It seems there are no posts to display. Please check back later,
+              or go to the <a href="{% url 'blog:index' %}">homepage</a>.</p>
+        {% endif %}
       </div>
     </div>
   </main>
