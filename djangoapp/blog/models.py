@@ -30,6 +30,13 @@ class Tag(models.Model):
     slug = models.SlugField(
         max_length=50, unique=True, default=None, null=True, blank=True
         )
+    url_externa = models.URLField(
+        max_length=255, blank=True, default='',
+        help_text='URL externa para a tag. Se preenchida, a tag redirecionará para essa URL em vez de exibir os posts associados.'
+    )
+    nova_aba = models.BooleanField(
+        default=False
+    )
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -69,6 +76,11 @@ class Page(models.Model):
         help_text='Indicates whether the page is published or not.'        
         )
     content = models.TextField()
+    
+    def get_absolute_url(self):
+        if not self.is_published:
+            return reverse("blog:index")
+        return reverse("blog:page", args={self.slug})
 
     def save(self, *args, **kwargs):
         if not self.slug:

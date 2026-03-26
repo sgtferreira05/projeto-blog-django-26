@@ -24,8 +24,25 @@
 
     <div class="card-content-wrapper">
       <p class="card-content">
-        {{ post.excerpt }}
+        {{ post.excerpt |safe}}
       </p>
+      <div class="card-tags">
+        {% for tag in post.tags.all %}
+          <span class="tag-item">
+            {% if tag.url_externa %}
+              <a href="{{ tag.url_externa }}" {% if tag.nova_aba %} target="_blank" {% endif %} class="card-tag-link">
+                <i class="fa-solid fa-tag"></i>
+                {{ tag.name }}
+                </a>
+              {% else %}
+                <a href="{% url 'blog:tag' tag.slug %}" class="card-tag-link">
+                  <i class="fa-solid fa-tag"></i>
+                  {{ tag.name }}
+                </a>
+              {% endif %}
+          </span>
+        {% endfor %}
+      </div>
 
       <div class="card-actions">
         <a class="card-action-link" href="{{ post.get_absolute_url }}">
