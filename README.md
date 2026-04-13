@@ -47,16 +47,6 @@ Backend (Django Admin)
 
         python-dotenv (variáveis de ambiente)
 
-📁 Estrutura do Projeto
-Plaintext
-
-├── blog/             # Lógica principal do blog (models, views, etc)
-├── site_setup/       # Configurações globais e menus dinâmicos
-├── project/          # Configurações do núcleo do Django
-├── templates/        # Arquivos HTML (Base, Partials e Pages)
-├── static/           # Arquivos CSS, Imagens e JS
-├── docker-compose.yml# Configuração do ambiente Docker
-└── requirements.txt  # Dependências do projeto
 
 🔧 Como Executar o Projeto
 Pré-requisitos
