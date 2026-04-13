@@ -1,4 +1,11 @@
 
+
+https://github.com/user-attachments/assets/37354626-81d8-42aa-ba3c-deec008598da
+
+
+
+
+
 🎾 Tennis Players Blog
 
 Este é um projeto de blog desenvolvido com Django dedicado ao mundo do tênis, cobrindo informações sobre os líderes dos circuitos ATP (masculino) e WTA (feminino).
