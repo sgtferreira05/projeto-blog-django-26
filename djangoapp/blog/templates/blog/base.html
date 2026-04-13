@@ -1,9 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   {% include 'blog/partials/_head.html' %}
   {% block additional_head %}{% endblock additional_head %}
+
+  <style>
+
+    body{
+      height: auto;
+      min-height: 100vh;
+      background-image: url('{% static "blog/css/tennis.jpg" %}');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .blog-wrapper{
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
 </head>
+
 <body>
   <div class="blog-wrapper">
     {% if site_setup.show_header %}
